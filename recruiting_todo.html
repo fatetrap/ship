@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Recruiting Tracker</title>
+  <link rel="stylesheet" href="recruiting_todo.css">
+</head>
+<body>
+
+<header>
+  <h1>Recruiting Tracker</h1>
+  <p class="meta">lastUpdated: 2026-11-01 · one slim row per application; full history lives in Dossiers/[slug].md; closed apps move to recruiting_todo_archive.html</p>
+</header>
+
+<section id="applications">
+  <h2>Applications <span class="count">2 live · 0 closed (see recruiting_todo_archive.html)</span></h2>
+
+  <!--
+    ROW FORMAT (one line per application; Ship reads and edits these):
+    Format: div class="app" data-status="considering" data-cv="drafted" data-id="[slug]" > [Company] · [Role] · drafted [YYYY-MM-DD] · [comp] · [location] · [channel]. Next: [one action]. · Dossier: Dossiers/[slug].md
+    (Copy the Example Co row below and edit it rather than typing one from scratch.)
+
+    data-status: considering (not yet applied) | applied | screening | interviewing
+    data-cv:     drafted (CV ready, shows on the Ship board) | submitted
+    data-id:     a unique slug, lowercase-with-hyphens, e.g. acme-fpa-analyst
+    Ship shows rows with data-status="considering" AND data-cv="drafted".
+  -->
+
+  <!-- INSERT-NEW-APPS-BELOW -->
+  <div class="app" data-status="considering" data-cv="drafted" data-id="exampleco-fin-analyst">Example Co · Financial Analyst, FP&amp;A · drafted 2026-11-01 · $95-120K + bonus · Boston, hybrid · cold portal (Greenhouse). Next: apply on Greenhouse. · Dossier: Dossiers/exampleco-fin-analyst.md</div>
+  <div class="app" data-status="applied" data-cv="submitted" data-id="sampleinc-strategy-assoc">Sample Inc · Strategy Associate · 2026-10-20 · $110-130K · New York · referral. Next: await response.</div>
+</section>
+
+<section id="contacts">
+  <h2>Contacts</h2>
+  <!-- INSERT-NEW-CONTACTS-BELOW -->
+  <div class="contact" data-response="none" data-id="example-contact">Alex Example · Example Co · Finance Manager · met at a meetup · ask about the FP&amp;A team.</div>
+</section>
+
+<section id="tasks">
+  <h2>Open Tasks <small>priority order, top = next action</small></h2>
+  <ul>
+    <!-- INSERT-NEW-TASKS-BELOW -->
+    <li class="task" data-tag="apply">Submit Example Co, then click Submitted on the Ship board.</li>
+  </ul>
+</section>
+
+</body>
+</html>

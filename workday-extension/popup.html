@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  :root { --bg: #fff; --fg: #1d1d1f; --mute: #6e6e73; --line: #e5e5ea; --ok: #1a7f37; --warn: #b35900; --btn: #1d4ed8; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1c1c1e; --fg: #f2f2f7; --mute: #a1a1a6; --line: #38383a; --ok: #4ade80; --warn: #fbbf24; --btn: #60a5fa; } }
+  body { margin: 0; width: 360px; font: 13px/1.4 system-ui, sans-serif; background: var(--bg); color: var(--fg); }
+  header { padding: 12px 14px 8px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-size: 14px; }
+  .sub { color: var(--mute); font-size: 12px; margin-top: 2px; }
+  .actions { display: flex; gap: 8px; padding: 10px 14px; }
+  button { font: inherit; border: 1px solid var(--btn); background: var(--btn); color: #fff; border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+  button.ghost { background: transparent; color: var(--btn); }
+  button:disabled { opacity: .5; cursor: default; }
+  ul { list-style: none; margin: 0; padding: 0 14px 12px; max-height: 360px; overflow: auto; }
+  li { padding: 7px 0; border-top: 1px solid var(--line); }
+  .co { font-weight: 600; }
+  .st { font-size: 12px; color: var(--mute); }
+  .st.ready { color: var(--ok); } .st.needs { color: var(--warn); }
+  select { width: 100%; font: inherit; margin-top: 6px; }
+  #here { padding: 0 14px 10px; display: none; }
+  #err { color: var(--warn); padding: 10px 14px; display: none; }
+  #others { border-top: 1px solid var(--line); display: none; }
+  #others h2 { font-size: 13px; margin: 10px 14px 0; }
+  #otherList a { color: var(--btn); text-decoration: none; }
+  #otherList a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Application Filler</h1>
+  <div class="sub">Fills Workday, Greenhouse and Ashby applications. You sign in where asked, check the tab and click Submit.</div>
+</header>
+<div id="err"></div>
+<div class="actions">
+  <button id="openAll">Open all</button>
+  <button id="openOthers" class="ghost" disabled>Open others</button>
+  <button id="fillHere" class="ghost" disabled>Fill this tab</button>
+</div>
+<div id="here">
+  <div class="sub">Which application is this tab?</div>
+  <select id="pick"></select>
+</div>
+<ul id="list"></ul>
+<section id="others">
+  <h2>Other drafts</h2>
+  <div class="sub" style="padding: 0 14px 6px">Sites the filler can't fill. "Open others" opens each apply page; you fill and submit by hand.</div>
+  <ul id="otherList"></ul>
+</section>
+<script src="popup.js"></script>
+</body>
+</html>

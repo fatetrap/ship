@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Application Filler (Ship)",
+  "version": "0.2.0",
+  "description": "Fills Workday, Greenhouse and Ashby applications from your Ship queue, then stops for you to review. Never submits.",
+  "permissions": ["storage", "tabs", "scripting"],
+  "host_permissions": [
+    "https://*.myworkdayjobs.com/*",
+    "https://*.myworkdaysite.com/*",
+    "https://*.greenhouse.io/*",
+    "https://jobs.ashbyhq.com/*",
+    "https://*.oraclecloud.com/*",
+    "https://*.paycomonline.net/*",
+    "https://*.successfactors.eu/*",
+    "https://*.successfactors.com/*",
+    "http://127.0.0.1:8765/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Application Filler" },
+  "content_scripts": [
+    {
+      "matches": ["https://*.myworkdayjobs.com/*", "https://*.myworkdaysite.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://*.greenhouse.io/*", "https://jobs.ashbyhq.com/*",
+                  "https://*.oraclecloud.com/hcmUI/CandidateExperience/*", "https://*.paycomonline.net/*",
+                  "https://*.successfactors.eu/*", "https://*.successfactors.com/*"],
+      "js": ["forms.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}

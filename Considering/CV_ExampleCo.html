@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CV_JaneDoe_ExampleCo</title>
+<style>
+  @page { size: letter; margin: 0.4in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 10.5pt;
+    line-height: 1.15;
+    color: #111;
+    margin: 0;
+    padding: 0.4in;
+    max-width: 8.5in;
+  }
+  .name { font-size: 12pt; font-weight: 700; letter-spacing: 0.5px; margin: 0; }
+  .contact { font-size: 10pt; color: #222; margin: 2px 0 6px 0; }
+  .contact a { color: #222; text-decoration: underline; }
+  .section-header {
+    font-variant: small-caps;
+    font-size: 10pt;
+    letter-spacing: 0.5px;
+    border-bottom: 0.6pt solid #888;
+    padding-bottom: 1px;
+    margin: 10px 0 4px 0;
+    font-weight: 400;
+  }
+  .role-block { margin-bottom: 6px; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; }
+  .row .left, .row .right { font-weight: 700; }
+  .company-meta { font-style: italic; font-weight: 400; }
+  ul { margin: 2px 0 4px 0; padding-left: 18px; }
+  li { margin: 1px 0; }
+  .skills { margin: 2px 0; }
+  .skills b { font-weight: 700; }
+</style>
+</head>
+<body>
+
+<p class="name">JANE DOE</p>
+<p class="contact">
+  (555) 555-0123 |
+  <a href="mailto:jane.doe@example.com">jane.doe@example.com</a> |
+  <a href="https://linkedin.com/in/your-handle/">linkedin.com/in/your-handle/</a>
+</p>
+
+<div class="section-header">Education</div>
+
+<div class="role-block">
+  <div class="row"><span class="left">EXAMPLE STATE UNIVERSITY</span><span class="right">Boston, MA</span></div>
+  <div class="row role-line"><span class="left">Bachelor of Science, <span class="company-meta">Economics</span></span><span class="right">Sep 2015 - May 2019</span></div>
+</div>
+
+<div class="section-header">Professional Experience</div>
+
+<div class="role-block">
+  <div class="row"><span class="left">EXAMPLE CORP, <span class="company-meta">regional retailer, 120 stores</span></span><span class="right">Boston, MA</span></div>
+  <div class="row role-line"><span class="left">Senior Analyst, FP&amp;A</span><span class="right">Jun 2022 - Present</span></div>
+  <ul>
+    <li>Built the annual budget and quarterly reforecast for a $300M revenue business; cut forecast error from 9% to 4% in two cycles.</li>
+    <li>Rebuilt the monthly variance pack in SQL and Power BI, replacing a 40-tab spreadsheet and saving three days per close.</li>
+    <li>Modeled store-level payback for 12 new openings; the plan was adopted by the executive committee.</li>
+  </ul>
+</div>
+
+<div class="role-block">
+  <div class="row"><span class="left">SAMPLE PARTNERS LLC</span><span class="right">New York, NY</span></div>
+  <div class="row role-line"><span class="left">Analyst</span><span class="right">Jul 2019 - May 2022</span></div>
+  <ul>
+    <li>Built three-statement and DCF models for eight sell-side mandates in consumer and industrials.</li>
+    <li>Drafted management presentations and buyer outreach materials for deals of $50M to $400M.</li>
+  </ul>
+</div>
+
+<div class="section-header">Skills &amp; Interests</div>
+<ul class="skills">
+  <li><b>Technical:</b> Excel, SQL, Python, Power BI, financial modeling.</li>
+  <li><b>Languages:</b> English (native), Spanish (professional).</li>
+  <li><b>Interests:</b> Trail running, chess.</li>
+</ul>
+
+</body>
+</html>

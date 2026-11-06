@@ -1,0 +1,5 @@
+# Needed: page count + "how full is the last page" for CV PDFs
+pymupdf>=1.24
+# Optional: only for `Ship triage` (AI pass over new JDs). AnthropicBedrock also needs boto3.
+anthropic>=2.3
+boto3>=1.35
